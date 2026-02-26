@@ -91,7 +91,7 @@ portfolio/
 Clone and run locally:
 
 ```bash
-git clone https://github.com/fahadhaya72/YOUR_REPO_NAME.git
+git clone https://github.com/fahadhaya72/fahad-hayat-portfolio.git
 cd portfolio
 
 npm install
