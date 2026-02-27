@@ -3,7 +3,7 @@
 A production-grade cybersecurity-focused portfolio built with React, Vite, and Tailwind CSS. This platform showcases my expertise in secure software development, penetration testing, vulnerability analysis, and full-stack engineering. Designed with a real-world cyber-defense dashboard aesthetic, the site reflects both offensive and defensive security capabilities.
 
 ```
-Portfolio is Live  : fahad-hayat-portfolio.vercel.app
+fahad-hayat-portfolio.vercel.app
 
 ```
 ---
