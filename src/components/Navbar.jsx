@@ -44,7 +44,7 @@ export default function Navbar() {
       <div className="flex justify-between items-center px-4 md:px-6 py-4">
         {/* mobile menu overlay */}
         {menuOpen && (
-          <div className="fixed inset-0 z-40 bg-black/80 backdrop-blur-lg flex flex-col items-center justify-center space-y-8 text-2xl">
+          <div className="fixed inset-0 z-40 bg-black/80 backdrop-blur-lg flex flex-col items-center pt-24 overflow-y-auto text-2xl space-y-8">
             {navItems.map((item, i) => (
               <a
                 key={i}
