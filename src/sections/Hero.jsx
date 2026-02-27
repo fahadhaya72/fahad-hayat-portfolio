@@ -39,8 +39,10 @@ export default function Hero() {
 
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black text-white">
 
-      {/* cyber background with radar pulse overlay */}
-      <CyberBackground />
+      {/* cyber background with radar pulse overlay (hide on small) */}
+      <div className="hidden md:block">
+        <CyberBackground />
+      </div>
 
 
       {/* =============================

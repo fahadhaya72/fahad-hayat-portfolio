@@ -84,7 +84,9 @@ export default function Skills() {
       className="relative min-h-screen bg-black text-white py-24 px-6 overflow-hidden"
     >
 
-      <CyberBackground />
+      <div className="hidden md:block">
+        <CyberBackground />
+      </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
 

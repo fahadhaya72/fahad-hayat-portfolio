@@ -85,8 +85,10 @@ export default function Projects() {
   return (
     <section id="projects" className="relative min-h-screen bg-black text-white py-20 px-6 overflow-hidden">
 
-      {/* cyber-themed grid and radar */}
-      <CyberBackground />
+      {/* cyber-themed grid and radar (disabled on phones) */}
+      <div className="hidden md:block">
+        <CyberBackground />
+      </div>
 
       <div className="max-w-7xl mx-auto">
 
@@ -109,7 +111,7 @@ export default function Projects() {
             <ChevronLeft size={24} className="text-purple-400" />
           </button>
 
-          <div ref={scrollContainerRef} className="flex gap-4 overflow-x-auto pb-6 hide-scrollbar px-16">
+          <div ref={scrollContainerRef} className="flex gap-4 overflow-x-auto pb-6 hide-scrollbar px-6 md:px-16">
 
             {projects.map((project, index) => (
 
@@ -119,7 +121,7 @@ export default function Projects() {
                 onClick={() => setSelectedProject(project)}
                 className="
                   cyber-animate
-                  min-w-[260px]
+                  min-w-[200px] sm:min-w-[260px]
                   bg-white/5
                   border border-purple-500/30
                   backdrop-blur-lg

@@ -85,20 +85,20 @@ const Experience = () => {
       {/* Timeline container */}
       <div className="relative max-w-5xl mx-auto">
 
-        {/* Timeline line */}
-        <div className="timeline-line absolute left-1/2 top-0 w-[3px] h-full bg-gradient-to-b from-purple-500 via-cyan-500 to-purple-500 origin-top"></div>
+        {/* Timeline line (desktop only) */}
+        <div className="timeline-line hidden md:block absolute left-1/2 top-0 w-[3px] h-full bg-gradient-to-b from-purple-500 via-cyan-500 to-purple-500 origin-top"></div>
 
         {experiences.map((exp, index) => (
           <div
             key={index}
-            className={`experience-card relative mb-16 flex ${
+            className={`experience-card relative mb-16 flex flex-col md:flex-row ${
               index % 2 === 0
-                ? "justify-start pr-8"
-                : "justify-end pl-8"
+                ? "md:justify-start md:pr-8"
+                : "md:justify-end md:pl-8"
             }`}
           >
-            {/* Dot */}
-            <div className="timeline-dot absolute left-1/2 -translate-x-1/2 w-5 h-5 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full border-4 border-[#070816]"></div>
+            {/* Dot (desktop only) */}
+            <div className="timeline-dot hidden md:block absolute left-1/2 -translate-x-1/2 w-5 h-5 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full border-4 border-[#070816]"></div>
 
             {/* Card */}
             <div className="w-full md:w-[45%] bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-lg hover:shadow-purple-500/20 transition duration-300">

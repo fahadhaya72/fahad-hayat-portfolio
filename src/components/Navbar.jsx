@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     function handleScroll() {
@@ -40,16 +41,59 @@ export default function Navbar() {
         ${scrolled ? "bg-black/50 border-purple-500/40" : ""}
       `}
     >
-      <div className="flex justify-between items-center px-6 py-4">
+      <div className="flex justify-between items-center px-4 md:px-6 py-4">
+        {/* mobile menu overlay */}
+        {menuOpen && (
+          <div className="fixed inset-0 z-40 bg-black/80 backdrop-blur-lg flex flex-col items-center justify-center space-y-8 text-2xl">
+            {navItems.map((item, i) => (
+              <a
+                key={i}
+                href={item.link}
+                onClick={() => setMenuOpen(false)}
+                className="text-white hover:text-purple-400 transition"
+              >
+                {item.name}
+              </a>
+            ))}
+            <button
+              className="absolute top-4 right-4 text-gray-300 hover:text-purple-400"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              ✕
+            </button>
+          </div>
+        )}
 
         {/* Logo */}
         <div className="text-lg font-bold text-purple-400">
           Fahad.dev
         </div>
 
-        {/* Navigation */}
-        <div className="flex gap-6 text-sm">
+        {/* Hamburger for mobile */}
+        <button
+          className="md:hidden text-gray-300 hover:text-purple-400 focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
 
+        {/* Navigation (desktop) */}
+        <div className="hidden md:flex gap-6 text-sm">
           {navItems.map((item, index) => (
             <a
               key={index}
@@ -71,10 +115,8 @@ export default function Navbar() {
                 transition-all
                 group-hover:w-full
               "></span>
-
             </a>
           ))}
-
         </div>
       </div>
     </motion.nav>

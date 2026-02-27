@@ -63,7 +63,9 @@ export default function Certifications() {
   return (
     <section id="certifications" className="relative min-h-screen bg-black text-white py-20 px-6 overflow-hidden">
 
-      <CyberBackground />
+      <div className="hidden md:block">
+        <CyberBackground />
+      </div>
 
       <div className="max-w-6xl mx-auto">
 
